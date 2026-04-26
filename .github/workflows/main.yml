@@ -1,0 +1,16 @@
+name: Simple CI Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  check-file:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Read file
+        run: cat greeting.txt
